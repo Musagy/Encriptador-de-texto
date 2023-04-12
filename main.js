@@ -22,15 +22,17 @@ if (inputSaved) input.value = inputSaved
 if (!resultSaved) copyBtn.style.display = "none"
 
 const setResult = text => {
-  result.innerHTML =
-    text
-      ? `<h2 class="resultText">${text}</h2>`
-      : resultContentDefault
-  localStorage.setItem("resultSaved", text || "")
+  result.innerHTML = text
+    ? `<h2 class="resultText">${text}</h2>`
+    : resultContentDefault
+  text
+    ? localStorage.setItem("resultSaved", text)
+    : localStorage.removeItem("resultSaved")
 }
 const updateInput = () => {
-  localStorage.setItem("inputSaved", input.value || "")
-  console.log(localStorage.getItem("inputSaved"))
+  input.value
+    ? localStorage.setItem("inputSaved", input.value)
+    : localStorage.removeItem("inputSaved")
 }
 const updateCopyBtn = () => {
   copyBtn.style.display = input.value ? "block" : "none"
