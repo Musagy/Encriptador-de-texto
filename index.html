@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="utils/normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Encriptador de texto</title>
+  </head>
+  <body>
+    <header>
+      <img src="public/logo.svg" alt="Logo" />
+    </header>
+    <main id="encryptor">
+      <textarea type="text" id="inputMain" placeholder="Ingrese el texto aquí"> </textarea>
+      <p>
+        <img src="public/infoIcon.svg" alt="info" /> Solo letras minúsculas y
+        sin acentos
+      </p>
+      <section>
+        <button id="encryptBtn">Encriptar</button>
+        <button id="decryptBtn">Desencriptar</button>
+      </section>
+    </main>
+    <aside>
+      <div id="result"></div>
+      <button id="copyBtn">Copiar</button>
+    </aside>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
