@@ -35,7 +35,7 @@ export const decrypt = text => {
   keysArray.forEach(([key, value]) => {
     // Se crea una expresión regular para buscar la palabra en toda la oración
     // No importa en ella hay 2 palabras clave, que las va a localizar
-    const regex = new RegExp(value, "gi")
+    const regex = new RegExp(value, "g")
 
     // Busca las palabras con el regex, y las remplaza por la llave
     // O sea la letra original
