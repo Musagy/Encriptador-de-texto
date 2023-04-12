@@ -1,6 +1,7 @@
 body {
+  position: relative;
   background: #f3f5fc;
-  padding: 40px;
+  padding: 30px 40px 50px;
   height: calc(100vh - 80px);
   min-height: 100vh;
 
@@ -101,6 +102,17 @@ button {
 main button:first-child {
   color: white;
   background-color: #0a3871;
+}
+
+footer{
+  position: absolute;
+  width: 100%;
+  color: #0a3871;
+  text-align: center;
+  bottom: 15px;
+}
+footer span {
+  font-weight: 700;
 }
 
 @media (width < 727px) {

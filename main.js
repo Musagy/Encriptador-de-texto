@@ -52,14 +52,7 @@ const decryptSubmit = () => {
 }
 const copyText = () => {
   const result = localStorage.getItem("resultSaved")
-  navigator.clipboard
-    .writeText(result)
-    .then(() => {
-      console.log("Texto copiado al portapapeles")
-    })
-    .catch(err => {
-      console.log("Error al copiar el texto: ", err)
-    })
+  navigator.clipboard.writeText(result)
 }
 
 // Configurando botones con sus funciones
