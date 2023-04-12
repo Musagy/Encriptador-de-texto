@@ -10,8 +10,8 @@ const decryptBtn = document.getElementById("decryptBtn")
 const copyBtn = document.getElementById("copyBtn")
 
 // Configuro variables y estados
-const inputSaved = localStorage.getItem("currentInput")
-const resultSaved = localStorage.getItem("currentResult")
+const inputSaved = localStorage.getItem("inputSaved")
+const resultSaved = localStorage.getItem("resultSaved")
 
 const resultContentDefault = `
 <img src="public/defaultResultImg.svg" alt="default result" class="resultImgDefault" />
@@ -22,14 +22,14 @@ if (inputSaved) input.value = inputSaved
 if (!resultSaved) copyBtn.style.display = "none"
 
 const setResult = text => {
-  result.innerHTML = text
+  result.innerHTML = text && text !== "null"
     ? `<h2 class="resultText">${text}</h2>`
     : resultContentDefault
-  localStorage.setItem("currentResult", text)
+  localStorage.setItem("resultSaved", text)
 }
 const updateInput = () => {
-  localStorage.setItem("currentInput", input.value)
-  console.log(localStorage.getItem("currentInput"))
+  localStorage.setItem("inputSaved", input.value)
+  console.log(localStorage.getItem("inputSaved"))
 }
 const updateCopyBtn = () => {
   copyBtn.style.display = input.value ? "block" : "none"
@@ -48,7 +48,7 @@ const decryptSubmit = () => {
   updateCopyBtn()
 }
 const copyText = () => {
-  const result = localStorage.getItem("currentResult")
+  const result = localStorage.getItem("resultSaved")
   navigator.clipboard
     .writeText(result)
     .then(() => {
