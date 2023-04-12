@@ -22,9 +22,14 @@ if (inputSaved) input.value = inputSaved
 if (!resultSaved) copyBtn.style.display = "none"
 
 const setResult = text => {
-  result.innerHTML = text && text !== "null"
-    ? `<h2 class="resultText">${text}</h2>`
-    : resultContentDefault
+  console.log(text === "null" ? "es null" : text ? "es texto" : "no es nada")
+  console.log(
+    text == "null" ? "es null a medias" : text ? "es texto" : "no es nada"
+  )
+  result.innerHTML =
+    text && text !== "null"
+      ? `<h2 class="resultText">${text}</h2>`
+      : resultContentDefault
   localStorage.setItem("resultSaved", text)
 }
 const updateInput = () => {
